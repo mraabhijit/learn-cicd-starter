@@ -8,7 +8,7 @@ def test_get_api_key_no_header():
     with pytest.raises(HTTPException) as excinfo:
         get_api_key(None)
     assert excinfo.value.status_code == 401
-    assert excinfo.value.detail == "no authorization header includeds"
+    assert excinfo.value.detail == "no authorization header included"
 
 
 def test_get_api_key_malformed_header():
