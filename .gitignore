@@ -1,4 +1,7 @@
-out
+.venv/
+archive-go/
 .env
-learn-cicd-starter
-notely
+.pytest_cache/
+__pycache__/
+notely.db
+.ruff_cache/
