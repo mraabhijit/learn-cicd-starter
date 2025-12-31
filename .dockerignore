@@ -1,0 +1,16 @@
+# Ignore the local virtual environment
+.venv/
+
+# Ignore local build artifacts and caches
+__pycache__/
+*.pyc
+.ruff_cache/
+dist/
+.pytest_cache/
+archive-go/
+
+# Ignore the environment variables file
+.env
+
+# Ignore the notely.db
+notely.db
