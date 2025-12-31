@@ -88,5 +88,5 @@ if __name__ == "__main__":
 
     port = int(os.getenv("PORT", 8080))
     # ignore the binding error
-    localhost = os.getenv("LOCALHOST", "0.0.0.0") # noqa: S104
+    localhost = os.getenv("LOCALHOST", "0.0.0.0")  # noqa: S104
     uvicorn.run(app, host=localhost, port=port)
