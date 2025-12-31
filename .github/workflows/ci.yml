@@ -16,25 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v5
+      - name: Lint with Ruff
+        uses: astral-sh/ruff-action@v3
         with:
-          version: "latest"
-          enable-cache: true
+          args: "check"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Format with Ruff
+        uses: astral-sh/ruff-action@v3
         with:
-          python-version-file: ".python-version"
-
-      - name: Install dependencies
-        run: uv sync --all-extras --dev
-
-      - name: Run Ruff check (Linting)
-        run: uv run ruff check .
-
-      - name: Run Ruff format (Formatting)
-        run: uv run ruff format --check .
+          args: "format --check"
 
   test:
     name: Tests

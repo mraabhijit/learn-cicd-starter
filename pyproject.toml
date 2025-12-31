@@ -20,3 +20,11 @@ dev = [
     "ruff>=0.14.10",
     "safety>=3.7.0",
 ]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # pyflakes
+    "I",  # isort (imports)
+    "S",  # flake8-bandit (SECURITY CHECKS) <--- This is your gosec!
+]
