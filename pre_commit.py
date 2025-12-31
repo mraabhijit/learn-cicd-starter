@@ -31,7 +31,7 @@ def main():
         ("Ruff Lint", ["uv", "run", "ruff", "check", "--diff", "."]),
         ("Ruff Format", ["uv", "run", "ruff", "format", "--check", "."]),
         ("Pytest", ["uv", "run", "pytest"]),
-        # ("Safety", ["uv", "run", "safety", "scan"]),
+        ("Safety", ["uv", "run", "safety", "scan"]),
     ]
 
     print("🚀 Running pre-commit checks...\n")
