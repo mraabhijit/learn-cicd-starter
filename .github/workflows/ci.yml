@@ -58,3 +58,10 @@ jobs:
 
       - name: Run tests
         run: uv run pytest
+
+      - uses: actions/checkout@main
+      - name: Run Safety CLI to check for vulnerabilities
+        uses: pyupio/safety-action@v1
+        with:
+          api-key: ${{ secrets.SAFETY_API_KEY }}
+        run: uv run safety scan
