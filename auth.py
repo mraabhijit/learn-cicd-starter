@@ -1,7 +1,8 @@
-from fastapi import Header, HTTPException, Depends
+from fastapi import Depends, Header, HTTPException
 from sqlalchemy.orm import Session
-from database import get_db
+
 import crud
+from database import get_db
 
 
 def get_api_key(authorization: str = Header(None)):
