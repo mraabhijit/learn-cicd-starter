@@ -1,14 +1,16 @@
 import os
-from sqlalchemy.orm import Session
-from fastapi import FastAPI, Depends, HTTPException
+
+from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from models import User, UserCreate, Note, NoteCreate
-from auth import get_current_user
-from database import get_db, engine, Base
+from fastapi.staticfiles import StaticFiles
+from sqlalchemy.orm import Session
+
 import crud
 import db_models
+from auth import get_current_user
+from database import Base, engine, get_db
+from models import Note, NoteCreate, User, UserCreate
 
 # Create tables in the database
 # In a real app, you'd use migrations (like Alembic),
@@ -85,4 +87,6 @@ if __name__ == "__main__":
     import uvicorn
 
     port = int(os.getenv("PORT", 8080))
-    uvicorn.run(app, host="0.0.0.0", port=port)
+    # ignore the binding error
+    localhost = os.getenv("LOCALHOST", "0.0.0.0")  # noqa: S104
+    uvicorn.run(app, host=localhost, port=port)

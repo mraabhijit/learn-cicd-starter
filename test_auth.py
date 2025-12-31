@@ -1,6 +1,8 @@
+from unittest.mock import MagicMock
+
 import pytest
 from fastapi import HTTPException
-from unittest.mock import MagicMock
+
 from auth import get_api_key, get_current_user
 
 
