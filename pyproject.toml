@@ -15,11 +15,16 @@ dependencies = [
     "uvicorn>=0.40.0",
 ]
 
+[[tool.uv.index]]
+url = "https://pkgs.safetycli.com/repository/public/pypi/simple/"
+default = true
+
 [dependency-groups]
 dev = [
     "ruff>=0.14.10",
     "safety>=3.7.0",
 ]
+
 
 [tool.ruff.lint]
 select = [
